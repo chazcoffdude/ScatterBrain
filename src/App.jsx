@@ -1,38 +1,48 @@
-import React, {useState, useEffect} from 'react';
-import Pet from './Components/Pet';
-import Navbar from './Components/Navbar';
-import About from './Components/About';
-import Footer from './Components/Footer';
-import SinglePet from './Components/SinglePet';
-import Filter from './Components/Filter';
+import React from 'react';
 
-const sanityClient = require('@sanity/client')
-const client = sanityClient({
-    projectId: 'ic8mtd9i',
-    dataset: 'production',
-    apiVersion: '2021-09-29',
-    token:'sk4MXWHOldtFi1kHiI5xTMmE1yDOYZHyKWQwVDNDWwTpZ5ulKaKBlA9WdRlsXW5tMfj68io7gibcahvmHPOkW8ML9JcDVdIjUrq5WXQDrZSc8gOqTmB3WBP7b8KB8uR56BYcMCsJA7G47jevTMo2cy150yUshcDX2ikKb2UyZOLXHqdY4yb2',
-    useCdn: true,
-})
-const query = "*[_type == 'pet']";
-
-<Get></Get>
 function App(){
+  
+var request = new XMLHttpRequest();
+
+let author = `nirvana`;
+let title = `sliver`;
+
+request.open('GET', `https://api.lyrics.ovh/v1/${author}/${title}`);
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    
+    console.log(this.responseText);
+
+  }
+ 
+};
+ request.send();
+
+
+fetch('https://random-words-api.vercel.app/word')
+  .then(response => response.json())
+  .then(data => console.log(data[0].word)); //word
   
 
 
-    return ( 
-        <>
-            <Navbar/>
-            <About/>
 
-            <Filter></Filter>
-            <hr/>
-            <div id='pets'>
-                
-            </div>
-            {!loading && <SinglePet data={pets[0]} />}
-            <Footer/>
+
+
+
+
+    return ( 
+      
+        <>
+
+         <div id="brainbox"><img id="brainimg" src="./Images/SB-brain.png" alt=""></img>
+         <img id="brainimg" src="./Images/SB-brain.png" alt=""></img> <img id="reyeimg" src="./Images/SB-righteye.png" alt=""></img> <img id="lips" src="./Images/idlelips.png" alt=""></img> <img id="leyeimg" src="./Images/SB-lefteye.png" alt=""></img></div>
+
+         <input type="text"></input>
+         <i>Frog </i>
+         
+         <i>Frog </i>
+         
         </>
     )
 }
