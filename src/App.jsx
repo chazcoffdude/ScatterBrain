@@ -5,8 +5,8 @@ function App(){
 var request = new XMLHttpRequest();
 
 let author = `nirvana`;
-let title = `sliver`;
-
+//let title = `sliver`;
+let title = null
 request.open('GET', `https://api.lyrics.ovh/v1/${author}/${title}`);
 
 request.onreadystatechange = function () {
@@ -17,32 +17,45 @@ request.onreadystatechange = function () {
   }
  
 };
- request.send();
 
+var dog = "yes";
+
+var cat = "no";
+
+function wordget(){
 
 fetch('https://random-words-api.vercel.app/word')
+
   .then(response => response.json())
-  .then(data => console.log(data[0].word)); //word
-  
+  .then(data => dog = data[0].word)//word
+  console.log(dog);
+
+fetch(`https://api.discogs.com/database/search?q=Nirvana&token=abcxyz123456`)
+    .then(response => response.json())
+    .then(data => cat = data.pages)
+    console.log(cat);
+
+  return(dog);
+
+
+  }
 
 
 
-
-
-
+ request.send();
 
     return ( 
-      
+    
         <>
-
-         <div id="brainbox"><img id="brainimg" src="./Images/SB-brain.png" alt=""></img>
-         <img id="brainimg" src="./Images/SB-brain.png" alt=""></img> <img id="reyeimg" src="./Images/SB-righteye.png" alt=""></img> <img id="lips" src="./Images/idlelips.png" alt=""></img> <img id="leyeimg" src="./Images/SB-lefteye.png" alt=""></img></div>
+        
+         <button onClick={wordget}><p>Click Here for Words</p></button> 
 
          <input type="text"></input>
-         <i>Frog </i>
-         
-         <i>Frog </i>
-         
+         <p id="txtbox">Cheeseburga</p>
+         <div id="brainbox"><img id="brainimg" src="./Images/SB-brain.png" alt=""></img>
+         <img id="brainimg" src="./Images/SB-brain.png" alt=""></img> <img id="reyeimg" src="./Images/SB-righteye.png" alt=""></img> <img id="lips" src="./Images/idlelips.png" alt=""></img><img id="leyeimg" src="./Images/SB-lefteye.png" alt=""></img></div>
+
+         <div id="mainbx" > <p className = "scrollbug">CRISS CROSS APPLE SAUCE</p> </div>       
         </>
     )
 }

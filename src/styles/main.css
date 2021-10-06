@@ -604,9 +604,7 @@ main {
 }/*# sourceMappingURL=main.css.map */
 
 @keyframes example {
-  0%   {margin-left: 50%; margin-top: 5%;}
-  50% {margin-left: 55%; margin-top: 0;}
-  100% {margin-left: 50%; margin-top: 5%;}
+  
 }
 
 /* yeah boyyyyy*/
@@ -636,3 +634,33 @@ main {
   position: absolute;
   
 }
+
+#txtbox{
+  position: absolute;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#mainbx{
+
+  max-width: 80rem;
+  width: 75%;
+  height: 20rem;
+  position: absolute;
+  border:solid white;
+  border-radius: 4%;
+
+  
+
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end); 
+
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
